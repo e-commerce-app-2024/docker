@@ -19,21 +19,6 @@ services:
     networks:
       - e-commerce-net
 
-  pgadmin:
-    container_name: ms_pgadmin
-    image: dpage/pgadmin4
-    restart: unless-stopped
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-    ports:
-      - "5050:80"
-    volumes:
-      - pgadmin:/var/lib/pgadmin
-    networks:
-      - e-commerce-net
-
   mongodb:
     container_name: ms_mongo
     image: mongo
