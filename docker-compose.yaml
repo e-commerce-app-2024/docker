@@ -94,6 +94,14 @@ services:
       - '9411:9411'
     networks:
       - e-commerce-net
+      
+  redis:
+    image: redis:alpine3.17
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - e-commerce-net      
 
   keycloak:
     container_name: keycloak_ms
